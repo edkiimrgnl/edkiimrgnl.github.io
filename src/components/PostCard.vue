@@ -19,6 +19,11 @@
                  @load="isLoadingImage = false">
         </div>
 
+        <div class="post-card__content">
+            <h2 class="post-card__title">{{ post.title }}</h2>
+            <p class="post-card__body">{{ post.body }}</p>
+        </div>
+
         <!-- TODO кнопки, добавить действия -->
         <div class="post-actions">
             <div class="action-buttons">
@@ -115,6 +120,23 @@ function getRandomFloat(min: number, max: number): number {
     display         : flex;
     justify-content : space-between;
     padding         : 8px 16px;
+}
+
+.post-card__content {
+    padding : 16px;
+    color   : #333;
+}
+
+.post-card__title {
+    font-size   : 18px;
+    margin      : 0 0 12px;
+    line-height : 1.4;
+}
+
+.post-card__body {
+    font-size   : 14px;
+    line-height : 1.6;
+    margin      : 0 0 16px;
 }
 
 .action-buttons {
