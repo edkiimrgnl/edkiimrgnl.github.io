@@ -72,13 +72,12 @@ export function usePostFeed(limit = 10) {
 			return;
 		}
 
-		observer.value = new IntersectionObserver(entries => {
-			if (entries[0].isIntersecting) {
+		observer.value = new IntersectionObserver(([entry]) => {
+			if (entry.isIntersecting) {
 				loadData();
 			}
 		}, {
-			rootMargin: '1000px',
-			threshold : 0.1,
+			rootMargin: '1000px 0px 0px',
 		});
 
 		if (el) {
